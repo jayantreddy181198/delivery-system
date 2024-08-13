@@ -5,7 +5,9 @@ from .models import OrderItems
 import json
 from .serializers import OrderItemsSerializer
 from menu_app.utils import calculate_total_cost  
-from .tasks import publish_order_message
+from .rabbitmq_producer import RabbitmqProducer
+
+rabbitmqproducer = RabbitmqProducer()
 
 class OrderItemsView(APIView):
     def get(self, request, pk=None):
@@ -30,11 +32,10 @@ class OrderItemsView(APIView):
             if serializer.is_valid():
                 serializer.save()
                 order_item = {
-                    'items': order_data['items'],
-                    'total': float(order_data['total']),  # Convert Decimal to float
-                    'email': order_data['email'],
+                    "id": serializer.data['id'],
+                    "email": order_data['email'],
                 }
-                publish_order_message.delay(json.dumps(order_item))
+                rabbitmqproducer.publish("Publish to Rabbitmq",json.dumps(order_item))
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except ValueError as e:

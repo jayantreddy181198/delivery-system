@@ -11,11 +11,23 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+MQ_HOST = os.getenv('MQ_HOST')
+MQ_PORT = os.getenv('MQ_PORT')
 
+CELERY_BROKER_URL = f'amqp://{MQ_HOST}:{MQ_PORT}'  
+CELERY_RESULT_BACKEND = 'rpc://'  # Use RPC for result backend with RabbitMQ
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'UTC'
+CELERY_IMPORTS = ('restraunt_app.tasks',)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -37,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'restraunt_app',
 ]
 
 MIDDLEWARE = [
