@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+        - 5672:5672
+        - 15672:15672
+    volumes:
+        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+        - rabbitmq_go_net
+
+  postgres:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - postgresdb:/var/lib/postgresql/data
+    networks:
+      - postgres_go_net
+
+  mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=delivery_system
+      - MYSQL_ROOT_PASSWORD=password
+    ports:
+      - '3306:3306'
+    volumes: 
+      - mysql-db:/var/lib/mysql
+    networks:
+      - mysql_go_net
+
+volumes:
+  postgresdb:
+    driver: local
+  mysql-db:
+    driver: local
+
+networks:
+  rabbitmq_go_net:
+    driver: bridge
+  postgres_go_net:
+    driver: bridge
+  mysql_go_net:
+    driver: bridge
