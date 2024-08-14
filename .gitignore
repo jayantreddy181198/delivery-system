@@ -1,9 +1,12 @@
 vendor_service/vendor_service/__pycache__
 vendor_service/restraunt_app/__pycache__
+vendor_service/.env
 
 communication_service/communication_service/__pycache__
 communication_service/email_service/__pycache__
+communication_service/.env
 
 order_service/menu_app/__pycache__
 order_service/order_manager_app/__pycache__
 order_service/order_service/__pycache__
+order_service/.env
