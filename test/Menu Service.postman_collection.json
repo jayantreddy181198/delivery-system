@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "7074c43e-b9fe-4c3f-b848-a988881d9350",
+		"name": "Menu Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36335603"
+	},
+	"item": [
+		{
+			"name": "Bar Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"name\": \"Martini\",\n    \"description\": \"Classic cocktail made with gin or vodka, vermouth, and garnish.\",\n    \"price\": 8.50,\n    \"available\": true,\n    \"category\": \"Cocktails\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Old Fashioned\",\n    \"description\": \"Timeless cocktail with bourbon or rye whiskey, sugar, bitters, and a twist of citrus.\",\n    \"price\": 9.00,\n    \"available\": true,\n    \"category\": \"Cocktails\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Mojito\",\n    \"description\": \"Refreshing cocktail with rum, mint, lime juice, sugar, and soda water.\",\n    \"price\": 7.50,\n    \"available\": true,\n    \"category\": \"Cocktails\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Negroni\",\n    \"description\": \"Italian cocktail made with gin, vermouth, and Campari, garnished with orange peel.\",\n    \"price\": 10.00,\n    \"available\": true,\n    \"category\": \"Cocktails\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Cosmopolitan\",\n    \"description\": \"Vodka-based cocktail with cranberry juice, triple sec, and lime juice.\",\n    \"price\": 8.50,\n    \"available\": true,\n    \"category\": \"Cocktails\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Daiquiri\",\n    \"description\": \"Refreshing cocktail with rum, lime juice, and simple syrup.\",\n    \"price\": 7.00,\n    \"available\": true,\n    \"category\": \"Cocktails\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Manhattan\",\n    \"description\": \"Classic cocktail with whiskey, sweet vermouth, and bitters, garnished with a cherry.\",\n    \"price\": 9.50,\n    \"available\": true,\n    \"category\": \"Cocktails\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Sazerac\",\n    \"description\": \"New Orleans cocktail with rye whiskey, absinthe, sugar, and bitters.\",\n    \"price\": 10.50,\n    \"available\": true,\n    \"category\": \"Cocktails\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"IPA\",\n    \"description\": \"India Pale Ale with citrusy hops and a bitter finish.\",\n    \"price\": 6.00,\n    \"available\": true,\n    \"category\": \"Beer\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Stout\",\n    \"description\": \"Dark, rich beer with roasted malt and coffee/chocolate flavors.\",\n    \"price\": 7.00,\n    \"available\": true,\n    \"category\": \"Beer\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Pale Ale\",\n    \"description\": \"Hoppy beer with balanced bitterness and fruity/citrusy notes.\",\n    \"price\": 6.50,\n    \"available\": true,\n    \"category\": \"Beer\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Pilsner\",\n    \"description\": \"Crisp, golden lager with a clean, refreshing taste.\",\n    \"price\": 5.50,\n    \"available\": true,\n    \"category\": \"Beer\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Wheat Beer\",\n    \"description\": \"Light and refreshing beer with flavors of wheat, often with hints of citrus or spice.\",\n    \"price\": 6.50,\n    \"available\": true,\n    \"category\": \"Beer\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Porter\",\n    \"description\": \"Dark beer with flavors of roasted malt, chocolate, and caramel.\",\n    \"price\": 7.50,\n    \"available\": true,\n    \"category\": \"Beer\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Saison\",\n    \"description\": \"Belgian-style farmhouse ale with fruity and spicy flavors.\",\n    \"price\": 8.00,\n    \"available\": true,\n    \"category\": \"Beer\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Gose\",\n    \"description\": \"Sour and salty beer with citrusy and herbal notes.\",\n    \"price\": 8.50,\n    \"available\": true,\n    \"category\": \"Beer\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Chardonnay\",\n    \"description\": \"Dry white wine with flavors of apple, pear, and oak.\",\n    \"price\": 9.00,\n    \"available\": true,\n    \"category\": \"Wine\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Cabernet Sauvignon\",\n    \"description\": \"Bold red wine with flavors of blackcurrant, plum, and cedar.\",\n    \"price\": 10.00,\n    \"available\": true,\n    \"category\": \"Wine\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Pinot Noir\",\n    \"description\": \"Elegant red wine with flavors of red berries, mushrooms, and earth.\",\n    \"price\": 11.00,\n    \"available\": true,\n    \"category\": \"Wine\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Sauvignon Blanc\",\n    \"description\": \"Crisp white wine with flavors of grapefruit, gooseberry, and herbs.\",\n    \"price\": 8.50,\n    \"available\": true,\n    \"category\": \"Wine\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Merlot\",\n    \"description\": \"Smooth red wine with flavors of plum, cherry, and chocolate.\",\n    \"price\": 9.50,\n    \"available\": true,\n    \"category\": \"Wine\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Rosé\",\n    \"description\": \"Refreshing pink wine with flavors of strawberry, watermelon, and citrus.\",\n    \"price\": 8.00,\n    \"available\": true,\n    \"category\": \"Wine\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Prosecco\",\n    \"description\": \"Sparkling wine with floral and fruity aromas, often with notes of apple and pear.\",\n    \"price\": 10.50,\n    \"available\": true,\n    \"category\": \"Wine\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Riesling\",\n    \"description\": \"Sweet and aromatic white wine with flavors of peach, apricot, and honey.\",\n    \"price\": 9.00,\n    \"available\": true,\n    \"category\": \"Wine\",\n    \"alcohol_content\": \"Medium\"\n  },\n  {\n    \"name\": \"Vodka\",\n    \"description\": \"Neutral spirit distilled from grains or potatoes, often used as a base for cocktails.\",\n    \"price\": 6.00,\n    \"available\": true,\n    \"category\": \"Spirits\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Rum\",\n    \"description\": \"Sweet spirit distilled from sugarcane, often used in cocktails like mojitos and daiquiris.\",\n    \"price\": 7.00,\n    \"available\": true,\n    \"category\": \"Spirits\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Whiskey\",\n    \"description\": \"Distilled alcoholic beverage made from fermented grain mash, aged in wooden barrels.\",\n    \"price\": 8.00,\n    \"available\": true,\n    \"category\": \"Spirits\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Tequila\",\n    \"description\": \"Agave-based spirit originating from Mexico, often consumed neat or in margaritas.\",\n    \"price\": 7.50,\n    \"available\": true,\n    \"category\": \"Spirits\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Gin\",\n    \"description\": \"Juniper-flavored spirit distilled from grain or malt, commonly used in martinis and gin and tonics.\",\n    \"price\": 7.50,\n    \"available\": true,\n    \"category\": \"Spirits\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Brandy\",\n    \"description\": \"Spirit distilled from fermented fruit juice, often aged in oak barrels.\",\n    \"price\": 9.00,\n    \"available\": true,\n    \"category\": \"Spirits\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Scotch\",\n    \"description\": \"Whisky made in Scotland, typically aged in oak barrels for several years.\",\n    \"price\": 10.00,\n    \"available\": true,\n    \"category\": \"Spirits\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Absinthe\",\n    \"description\": \"High-proof spirit infused with botanicals, including grand wormwood, anise, and fennel.\",\n    \"price\": 12.00,\n    \"available\": true,\n    \"category\": \"Spirits\",\n    \"alcohol_content\": \"Strong\"\n  },\n  {\n    \"name\": \"Soda\",\n    \"description\": \"Carbonated soft drink available in various flavors.\",\n    \"price\": 2.00,\n    \"available\": true,\n    \"category\": \"Mocktails\",\n    \"alcohol_content\": \"None\"\n  },\n  {\n    \"name\": \"Iced Tea\",\n    \"description\": \"Refreshing beverage made by steeping tea leaves in cold water and served over ice.\",\n    \"price\": 3.00,\n    \"available\": true,\n    \"category\": \"Mocktails\",\n    \"alcohol_content\": \"None\"\n  },\n  {\n    \"name\": \"Lemonade\",\n    \"description\": \"Sweetened beverage made from lemon juice, sugar, and water.\",\n    \"price\": 3.50,\n    \"available\": true,\n    \"category\": \"Mocktails\",\n    \"alcohol_content\": \"None\"\n  },\n  {\n    \"name\": \"Mocktail\",\n    \"description\": \"Non-alcoholic cocktail made with fruit juices, syrups, and soda water.\",\n    \"price\": 5.00,\n    \"available\": true,\n    \"category\": \"Mocktails\",\n    \"alcohol_content\": \"None\"\n  },\n  {\n    \"name\": \"Coffee\",\n    \"description\": \"Beverage made from brewed coffee beans, served hot or cold.\",\n    \"price\": 3.00,\n    \"available\": true,\n    \"category\": \"Mocktails\",\n    \"alcohol_content\": \"None\"\n  },\n  {\n    \"name\": \"Tea\",\n    \"description\": \"Hot beverage made by steeping tea leaves or tea bags in hot water.\",\n    \"price\": 2.50,\n    \"available\": true,\n    \"category\": \"Mocktails\",\n    \"alcohol_content\": \"None\"\n  },\n  {\n    \"name\": \"Smoothie\",\n    \"description\": \"Thick and creamy beverage made with blended fruits, yogurt, and ice.\",\n    \"price\": 5.50,\n    \"available\": true,\n    \"category\": \"Mocktails\",\n    \"alcohol_content\": \"None\"\n  },\n  {\n    \"name\": \"Juice\",\n    \"description\": \"Beverage made from the extraction or pressing of the natural liquid contained in fruit or vegetables.\",\n    \"price\": 3.50,\n    \"available\": true,\n    \"category\": \"Mocktails\",\n    \"alcohol_content\": \"None\"\n  }\n]"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/menu/api/bar/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"menu",
+						"api",
+						"bar",
+						"create"
+					]
+				},
+				"description": "Bar menu\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Food Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"name\": \"Bruschetta\",\n    \"description\": \"Toasted bread topped with tomatoes, garlic, and basil\",\n    \"price\": 8.99,\n    \"available\": true,\n    \"category\": \"Appetizers\"\n  },\n  {\n    \"name\": \"Caprese Salad\",\n    \"description\": \"Fresh tomatoes, mozzarella, basil, and balsamic glaze\",\n    \"price\": 9.99,\n    \"available\": true,\n    \"category\": \"Appetizers\"\n  },\n  {\n    \"name\": \"Chicken Wings\",\n    \"description\": \"Crispy chicken wings served with dipping sauce\",\n    \"price\": 10.99,\n    \"available\": true,\n    \"category\": \"Appetizers\"\n  },\n  {\n    \"name\": \"Spring Rolls\",\n    \"description\": \"Crispy vegetable spring rolls served with sweet chili sauce\",\n    \"price\": 7.99,\n    \"available\": true,\n    \"category\": \"Appetizers\"\n  },\n  {\n    \"name\": \"Stuffed Mushrooms\",\n    \"description\": \"Mushroom caps stuffed with herbed cheese and baked\",\n    \"price\": 8.49,\n    \"available\": true,\n    \"category\": \"Appetizers\"\n  },\n  {\n    \"name\": \"Shrimp Cocktail\",\n    \"description\": \"Chilled shrimp served with cocktail sauce\",\n    \"price\": 12.99,\n    \"available\": true,\n    \"category\": \"Appetizers\"\n  },\n  {\n    \"name\": \"Cheese Plate\",\n    \"description\": \"Assorted cheeses served with crackers and fruit\",\n    \"price\": 11.49,\n    \"available\": true,\n    \"category\": \"Appetizers\"\n  },\n  {\n    \"name\": \"Spinach Artichoke Dip\",\n    \"description\": \"Creamy blend of spinach, artichokes, and cheese\",\n    \"price\": 8.99,\n    \"available\": true,\n    \"category\": \"Appetizers\"\n  },\n  {\n    \"name\": \"Grilled Salmon\",\n    \"description\": \"Grilled salmon fillet served with lemon butter sauce\",\n    \"price\": 18.99,\n    \"available\": true,\n    \"category\": \"Entrees\"\n  },\n  {\n    \"name\": \"Filet Mignon\",\n    \"description\": \"8 oz tender filet mignon served with mashed potatoes and vegetables\",\n    \"price\": 24.99,\n    \"available\": true,\n    \"category\": \"Entrees\"\n  },\n  {\n    \"name\": \"Chicken Parmesan\",\n    \"description\": \"Breaded chicken breast topped with marinara sauce and melted cheese, served with spaghetti\",\n    \"price\": 16.99,\n    \"available\": true,\n    \"category\": \"Entrees\"\n  },\n  {\n    \"name\": \"Vegetable Stir-Fry\",\n    \"description\": \"Assorted vegetables stir-fried in a savory sauce, served over rice\",\n    \"price\": 14.99,\n    \"available\": true,\n    \"category\": \"Entrees\"\n  },\n  {\n    \"name\": \"Caesar Salad\",\n    \"description\": \"Crisp romaine lettuce, croutons, Parmesan cheese, and Caesar dressing\",\n    \"price\": 10.99,\n    \"available\": true,\n    \"category\": \"Entrees\"\n  },\n  {\n    \"name\": \"BBQ Ribs\",\n    \"description\": \"Slow-cooked pork ribs smothered in BBQ sauce, served with coleslaw and fries\",\n    \"price\": 19.99,\n    \"available\": true,\n    \"category\": \"Entrees\"\n  },\n  {\n    \"name\": \"Pasta Primavera\",\n    \"description\": \"Penne pasta tossed with seasonal vegetables in a light cream sauce\",\n    \"price\": 15.99,\n    \"available\": true,\n    \"category\": \"Entrees\"\n  },\n  {\n    \"name\": \"Vegetarian Lasagna\",\n    \"description\": \"Layers of pasta, marinara sauce, ricotta, and assorted vegetables\",\n    \"price\": 16.99,\n    \"available\": true,\n    \"category\": \"Entrees\"\n  },\n  {\n    \"name\": \"Garlic Bread\",\n    \"description\": \"Toasted bread topped with garlic butter and parsley\",\n    \"price\": 4.99,\n    \"available\": true,\n    \"category\": \"Sides\"\n  },\n  {\n    \"name\": \"French Fries\",\n    \"description\": \"Crispy golden fries served with ketchup\",\n    \"price\": 3.99,\n    \"available\": true,\n    \"category\": \"Sides\"\n  },\n  {\n    \"name\": \"Steamed Vegetables\",\n    \"description\": \"Assorted seasonal vegetables lightly steamed\",\n    \"price\": 5.99,\n    \"available\": true,\n    \"category\": \"Sides\"\n  },\n  {\n    \"name\": \"Mashed Potatoes\",\n    \"description\": \"Creamy mashed potatoes made with butter and cream\",\n    \"price\": 4.49,\n    \"available\": true,\n    \"category\": \"Sides\"\n  },\n  {\n    \"name\": \"Onion Rings\",\n    \"description\": \"Crispy battered onion rings served with ranch dressing\",\n    \"price\": 6.49,\n    \"available\": true,\n    \"category\": \"Sides\"\n  },\n  {\n    \"name\": \"Caesar Salad\",\n    \"description\": \"Crisp romaine lettuce, croutons, Parmesan cheese, and Caesar dressing\",\n    \"price\": 5.99,\n    \"available\": true,\n    \"category\": \"Sides\"\n  },\n  {\n    \"name\": \"Macaroni and Cheese\",\n    \"description\": \"Elbow macaroni baked in a creamy cheese sauce\",\n    \"price\": 7.49,\n    \"available\": true,\n    \"category\": \"Sides\"\n  },\n  {\n    \"name\": \"Cheesecake\",\n    \"description\": \"Creamy cheesecake topped with strawberry compote\",\n    \"price\": 6.99,\n    \"available\": true,\n    \"category\": \"Desserts\"\n  },\n  {\n    \"name\": \"Chocolate Lava Cake\",\n    \"description\": \"Warm chocolate cake with a molten chocolate center, served with vanilla ice cream\",\n    \"price\": 8.49,\n    \"available\": true,\n    \"category\": \"Desserts\"\n  },\n  {\n    \"name\": \"Apple Pie\",\n    \"description\": \"Traditional apple pie with a flaky crust, served warm with vanilla ice cream\",\n    \"price\": 7.99,\n    \"available\": true,\n    \"category\": \"Desserts\"\n  },\n  {\n    \"name\": \"Tiramisu\",\n    \"description\": \"Classic Italian dessert made with layers of coffee-soaked ladyfingers and mascarpone cheese\",\n    \"price\": 9.99,\n    \"available\": true,\n    \"category\": \"Desserts\"\n  },\n  {\n    \"name\": \"Key Lime Pie\",\n    \"description\": \"Refreshing key lime pie with a graham cracker crust\",\n    \"price\": 6.99,\n    \"available\": true,\n    \"category\": \"Desserts\"\n  },\n  {\n    \"name\": \"Fruit Tart\",\n    \"description\": \"Butter pastry crust filled with custard and topped with fresh fruit\",\n    \"price\": 8.99,\n    \"available\": true,\n    \"category\": \"Desserts\"\n  },\n  {\n    \"name\": \"Brownie Sundae\",\n    \"description\": \"Warm chocolate brownie topped with vanilla ice cream, chocolate sauce, and whipped cream\",\n    \"price\": 8.99,\n    \"available\": true,\n    \"category\": \"Desserts\"\n  },\n  {\n    \"name\": \"Creme Brulee\",\n    \"description\": \"Creamy custard topped with caramelized sugar\",\n    \"price\": 7.49,\n    \"available\": true,\n    \"category\": \"Desserts\"\n  },\n  {\n    \"name\": \"Soft Drink\",\n    \"description\": \"Coca-Cola, Pepsi, Sprite, or Diet Coke\",\n    \"price\": 2.49,\n    \"available\": true,\n    \"category\": \"Beverages\"\n  },\n  {\n    \"name\": \"Iced Tea\",\n    \"description\": \"Refreshing brewed iced tea, sweetened or unsweetened\",\n    \"price\": 2.49,\n    \"available\": true,\n    \"category\": \"Beverages\"\n  },\n  {\n    \"name\": \"Lemonade\",\n    \"description\": \"Freshly squeezed lemonade\",\n    \"price\": 2.99,\n    \"available\": true,\n    \"category\": \"Beverages\"\n  },\n  {\n    \"name\": \"Coffee\",\n    \"description\": \"Freshly brewed coffee\",\n    \"price\": 1.99,\n    \"available\": true,\n    \"category\": \"Beverages\"\n  },\n  {\n    \"name\": \"Espresso\",\n    \"description\": \"Strong black coffee brewed by forcing steam through finely-ground coffee beans\",\n    \"price\": 2.99,\n    \"available\": true,\n    \"category\": \"Beverages\"\n  },\n  {\n    \"name\": \"Cappuccino\",\n    \"description\": \"Espresso with frothy steamed milk and a dash of cocoa powder\",\n    \"price\": 3.49,\n    \"available\": true,\n    \"category\": \"Beverages\"\n  },\n  {\n    \"name\": \"Hot Chocolate\",\n    \"description\": \"Rich, creamy hot chocolate topped with whipped cream\",\n    \"price\": 3.49,\n    \"available\": true,\n    \"category\": \"Beverages\"\n  },\n  {\n    \"name\": \"Mojito\",\n    \"description\": \"Refreshing cocktail made with rum, mint, lime, sugar, and soda water\",\n    \"price\": 8.99,\n    \"available\": true,\n    \"category\": \"Beverages\"\n  }\n]\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/menu/api/food/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"menu",
+						"api",
+						"food",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetFoodWithCategory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/menu/api/food/getall/Appetizers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"menu",
+						"api",
+						"food",
+						"getall",
+						"Appetizers"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Appetizers",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Food Items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/menu/api/food/getall",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"menu",
+						"api",
+						"food",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Bar Items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/menu/api/bar/getall",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"menu",
+						"api",
+						"bar",
+						"getall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBarWithCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/menu/api/bar/getall/Beer",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"menu",
+						"api",
+						"bar",
+						"getall",
+						"Beer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Bar Items",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Update_All\": false,\n    \"data\": [\n        {\n            \"id\": 39,\n            \"category\": \"Beer\"\n        },\n        {\n            \"id\": 1,\n            \"available\": true\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8001/menu/api/bar/update",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"menu",
+						"api",
+						"bar",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update All Food Items",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Update_All\": true,\n    \"data\": {\n        \"available\": true\n    }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8001/menu/api/food/update",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"menu",
+						"api",
+						"food",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Food Items",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Update_All\": false,\n    \"data\": [\n        {\n            \"id\": 39,\n            \"category\": \"Beverages\"\n        },\n        {\n            \"id\": 1,\n            \"available\": true\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8001/menu/api/food/update",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"menu",
+						"api",
+						"food",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update All Bar Items",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Update_All\": true,\n    \"data\": {\n        \"available\": true\n    }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8001/menu/api/bar/update",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"menu",
+						"api",
+						"bar",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Total Cost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"items\": [\n        {\n            \"name\": \"Bruschetta\",\n            \"quantity\": 2\n        },\n        {\n            \"name\": \"Martini\",\n            \"quantity\": 2\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8001/menu/api/total/cost",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"menu",
+						"api",
+						"total",
+						"cost"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
