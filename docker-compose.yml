@@ -41,12 +41,12 @@ services:
     networks:
       - mysql_go_net
 
-  communication-service:  # node application
-    restart: always # automatically restart if the app fails
+  communication-service:
+    restart: always
     image: jayant1451/communication-service:1.0.0
     depends_on:
       - rabbitmq
-    environment: # environment variables
+    environment:
       - USER_EMAIL=jayant.bodkurwar@spit.ac.in
       - USER_EMAIL_PASS=
       - MQ_HOST=host.docker.internal
@@ -59,12 +59,12 @@ services:
     networks:
       - communication_service_go_net
 
-  vendor-service:  # node application
-    restart: always # automatically restart if the app fails
+  vendor-service:
+    restart: always
     image: jayant1451/vendor-service:1.0.0
     depends_on:
       - rabbitmq
-    environment: # environment variables
+    environment:
       - MQ_HOST=host.docker.internal
       - MQ_PORT=5672
       - QUEUE=order.process
