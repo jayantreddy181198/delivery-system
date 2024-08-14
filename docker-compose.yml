@@ -47,7 +47,7 @@ services:
     depends_on:
       - rabbitmq
     environment: # environment variables
-      - USER_EMAIL=
+      - USER_EMAIL=jayant.bodkurwar@spit.ac.in
       - USER_EMAIL_PASS=
       - MQ_HOST=host.docker.internal
       - MQ_PORT=5672
@@ -76,32 +76,6 @@ services:
     networks:
       - vendor_service_go_net
 
-  order-service:  # node application
-    restart: always # automatically restart if the app fails
-    image: jayant1451/order-service:1.0.0
-    depends_on:
-      - mysql
-      - postgres
-      - rabbitmq
-    environment: # environment variables
-      - DB_NAME=delivery_system
-      - DB_USER=postgres
-      - DB_PASSWORD=postgres
-      - DB_HOST=host.docker.internal
-      - DB_PORT=5432
-      - MYSQL_DB_NAME=delivery_system
-      - MYSQL_DB_USER=root
-      - MYSQL_DB_PASSWORD=password
-      - MYSQL_DB_HOST=host.docker.internal
-      - MYSQL_DB_PORT=3306
-      - MQ_HOST=host.docker.internal
-      - MQ_PORT=5672
-      - EXCHANGE=orders
-    ports: 
-      - '8001:8001'
-    networks:
-      - order_service_go_net
-
 volumes:
   postgresdb:
     driver: local
@@ -118,6 +92,4 @@ networks:
   communication_service_go_net:
     driver: bridge
   vendor_service_go_net:
-    driver: bridge
-  order_service_go_net:
     driver: bridge

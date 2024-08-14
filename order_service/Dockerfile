@@ -15,5 +15,6 @@ COPY . /app/
 # Expose the port that your Django application runs on
 EXPOSE 8001
 
-# Run both the Django development server and the Celery worker
-CMD ["sh", "-c", "python manage.py migrate menu_app && python manage.py migrate order_manager_app && python manage.py runserver 0.0.0.0:8001"]
+# Set the entrypoint script
+CMD ["sh", "-c", "python manage.py migrate --database=mysql_db && python manage.py migrate --database=postgres_db && python manage.py runserver 0.0.0.0:80
+01"]

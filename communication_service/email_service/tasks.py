@@ -38,11 +38,9 @@ def start_rabbitmq_consumer_msg():
                 ch.basic_ack(delivery_tag=method.delivery_tag)
             except json.JSONDecodeError:
                 logging.error(f"Invalid JSON: {body}")
-                # Optionally, you can reject the message and requeue
                 ch.basic_nack(delivery_tag=method.delivery_tag, requeue=False)
             except Exception as e:
                 logging.error(f"Error processing message: {e}")
-                # Optionally, you can reject the message without requeuing
                 ch.basic_nack(delivery_tag=method.delivery_tag, requeue=False)
 
         # Start consuming messages

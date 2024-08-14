@@ -1,6 +1,5 @@
 from django.db import models
 
-# Model for food items on the menu
 class FoodItem(models.Model):
 
     CATEGORY_CHOICES = [
