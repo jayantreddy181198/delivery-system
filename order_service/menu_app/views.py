@@ -21,15 +21,15 @@ class FoodItemCreateView(APIView):
         serializer = FoodItemSerializer(data=request.data, many=True)
         if serializer.is_valid():
             for item in serializer.validated_data:
-                FoodItem.objects.using('postgres_db').create(**item)
+                FoodItem.objects.using('default').create(**item)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def get(self, request, category=None):
         if category:
-            food_items = FoodItem.objects.using('postgres_db').filter(category=category)
+            food_items = FoodItem.objects.using('default').filter(category=category)
         else:
-            food_items = FoodItem.objects.using('postgres_db').all()
+            food_items = FoodItem.objects.using('default').all()
         serializer = FoodItemSerializer(food_items, many=True)
         return Response(serializer.data)
 
@@ -38,7 +38,7 @@ class FoodItemCreateView(APIView):
         update_data = request.data.get('data', [])
         updated_data = []
         if update_all:
-            food_items = FoodItem.objects.using('postgres_db').all()
+            food_items = FoodItem.objects.using('default').all()
             for food_item in food_items:
                 serializer = FoodItemSerializer(food_item, data=update_data, partial=True)
                 if serializer.is_valid():
@@ -49,7 +49,7 @@ class FoodItemCreateView(APIView):
             return Response(updated_data)
         else:
             ids_to_update = [item['id'] for item in update_data]
-            food_items = FoodItem.objects.using('postgres_db').filter(pk__in=ids_to_update)
+            food_items = FoodItem.objects.using('default').filter(pk__in=ids_to_update)
             for food_item in food_items:
                 for update in update_data:
                     if update['id'] == food_item.id:
@@ -66,15 +66,15 @@ class BarItemCreateView(APIView):
         serializer = BarItemSerializer(data=request.data, many=True)
         if serializer.is_valid():
             for item in serializer.validated_data:
-                BarItem.objects.using('postgres_db').create(**item)
+                BarItem.objects.using('default').create(**item)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def get(self, request, category=None):
         if category:
-            bar_items = BarItem.objects.using('postgres_db').filter(category=category)
+            bar_items = BarItem.objects.using('default').filter(category=category)
         else:
-            bar_items = BarItem.objects.using('postgres_db').all()
+            bar_items = BarItem.objects.using('default').all()
         serializer = BarItemSerializer(bar_items, many=True)
         return Response(serializer.data)
 
@@ -83,7 +83,7 @@ class BarItemCreateView(APIView):
         update_data = request.data.get('data', [])
         updated_data = []
         if update_all:
-            bar_items = BarItem.objects.using('postgres_db').all()
+            bar_items = BarItem.objects.using('default').all()
             for bar_item in bar_items:
                 serializer = BarItemSerializer(bar_item, data=update_data, partial=True)
                 if serializer.is_valid():
@@ -94,7 +94,7 @@ class BarItemCreateView(APIView):
             return Response(updated_data)
         else:
             ids_to_update = [item['id'] for item in update_data]
-            bar_items = BarItem.objects.using('postgres_db').filter(pk__in=ids_to_update)
+            bar_items = BarItem.objects.using('default').filter(pk__in=ids_to_update)
             for bar_item in bar_items:
                 for update in update_data:
                     if update['id'] == bar_item.id:

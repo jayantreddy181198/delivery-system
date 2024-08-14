@@ -41,6 +41,67 @@ services:
     networks:
       - mysql_go_net
 
+  communication-service:  # node application
+    restart: always # automatically restart if the app fails
+    image: jayant1451/communication-service:1.0.0
+    depends_on:
+      - rabbitmq
+    environment: # environment variables
+      - USER_EMAIL=
+      - USER_EMAIL_PASS=
+      - MQ_HOST=host.docker.internal
+      - MQ_PORT=5672
+      - QUEUE=orders.confirmations
+      - PREFETCH_COUNT=20
+      - EXCHANGE=orders
+    ports: 
+      - '8004:8004'
+    networks:
+      - communication_service_go_net
+
+  vendor-service:  # node application
+    restart: always # automatically restart if the app fails
+    image: jayant1451/vendor-service:1.0.0
+    depends_on:
+      - rabbitmq
+    environment: # environment variables
+      - MQ_HOST=host.docker.internal
+      - MQ_PORT=5672
+      - QUEUE=order.process
+      - PREFETCH_COUNT=20
+      - EXCHANGE=orders
+      - ORDER_UPDATE_URL=http://host.docker.internal:8001/order/api/update/
+    ports: 
+      - '8003:8003'
+    networks:
+      - vendor_service_go_net
+
+  order-service:  # node application
+    restart: always # automatically restart if the app fails
+    image: jayant1451/order-service:1.0.0
+    depends_on:
+      - mysql
+      - postgres
+      - rabbitmq
+    environment: # environment variables
+      - DB_NAME=delivery_system
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_HOST=host.docker.internal
+      - DB_PORT=5432
+      - MYSQL_DB_NAME=delivery_system
+      - MYSQL_DB_USER=root
+      - MYSQL_DB_PASSWORD=password
+      - MYSQL_DB_HOST=host.docker.internal
+      - MYSQL_DB_PORT=3306
+      - MQ_HOST=host.docker.internal
+      - MQ_PORT=5672
+      - EXCHANGE=orders
+    ports: 
+      - '8001:8001'
+    networks:
+      - order_service_go_net
+
 volumes:
   postgresdb:
     driver: local
@@ -53,4 +114,10 @@ networks:
   postgres_go_net:
     driver: bridge
   mysql_go_net:
+    driver: bridge
+  communication_service_go_net:
+    driver: bridge
+  vendor_service_go_net:
+    driver: bridge
+  order_service_go_net:
     driver: bridge

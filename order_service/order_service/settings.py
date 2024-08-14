@@ -28,7 +28,10 @@ SECRET_KEY = 'django-insecure-3id7u=0=l_1phvr&8-5_v5!lnvkpmn^y(8y^^)yv!qui8&=n=-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'host.docker.internal',
+    '127.0.0.1'
+    ]
 
 
 # Application definition
@@ -82,14 +85,6 @@ DATABASE_ROUTERS = ['order_service.MenuappRouter.MenuappRouter', 'order_service.
 
 DATABASES = {
     "default": {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
-    },
-    "postgres_db": {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
